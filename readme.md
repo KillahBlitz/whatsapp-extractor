@@ -49,12 +49,17 @@ whatsapp-extractor/
    cd whatsapp-extractor
    ```
 
-2. **Crear entorno virtual:**
+2. **Cambiar a la rama de desarrollo:**
+   ```bash
+   git checkout devel
+   ```
+
+3. **Crear entorno virtual:**
    ```bash
    python -m venv .venv
    ```
 
-3. **Activar el entorno virtual:**
+4. **Activar el entorno virtual:**
    - En Windows:
      ```bash
      .venv\Scripts\activate
@@ -64,7 +69,7 @@ whatsapp-extractor/
      source .venv/bin/activate
      ```
 
-4. **Instalar dependencias:**
+5. **Instalar dependencias:**
    ```bash
    pip install -r assets/requirements.txt
    ```
@@ -147,6 +152,58 @@ Las dependencias del proyecto están listadas en `assets/requirements.txt`:
 - El entorno virtual debe estar activado antes de ejecutar la aplicación
 - Los cambios en `form.ui` requieren regenerar `ui_form.py`
 - La aplicación utiliza web scraping, por lo que debe cumplir con los términos de servicio de WhatsApp
+
+## 🌿 Manejo de Ramas
+
+### Estructura de Ramas
+
+El proyecto utiliza un flujo de trabajo con ramas para organizar el desarrollo:
+
+- **`main`**: Rama principal estable con releases
+- **`devel`**: Rama de desarrollo principal donde se integran las nuevas características
+- **`staging`**: Rama para pruebas antes de merge a main
+- **`feature/nombre-feature`**: Ramas individuales para desarrollar nuevas características
+
+### Crear una Nueva Rama para Desarrollo
+
+Antes de empezar cualquier desarrollo, asegúrate de crear una rama específica:
+
+1. **Cambiar a la rama devel:**
+   ```bash
+   git checkout devel
+   ```
+
+2. **Actualizar la rama devel:**
+   ```bash
+   git pull origin devel
+   ```
+
+3. **Crear y cambiar a tu nueva rama:**
+   ```bash
+   git checkout -b feature/nombre-de-tu-feature
+   ```
+
+4. **Desarrollar tu funcionalidad**
+
+5. **Hacer commit de los cambios:**
+   ```bash
+   git add .
+   git commit -m "feat: descripción de tu feature"
+   ```
+
+6. **Subir la rama al repositorio:**
+   ```bash
+   git push origin feature/nombre-de-tu-feature
+   ```
+
+7. **Crear un Pull Request hacia la rama `devel`**
+
+### Convenciones de Nombres de Ramas
+
+- `feature/nueva-funcionalidad`: Para nuevas características
+- `bugfix/corregir-error`: Para corrección de bugs
+- `hotfix/error-critico`: Para correcciones urgentes
+- `docs/actualizar-documentacion`: Para cambios en documentación
 
 ## 🤝 Contribución
 
