@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>460</width>
-    <height>572</height>
+    <width>446</width>
+    <height>617</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -38,32 +38,11 @@ QPushButton:pressed {
     background-color: #202020;
 }</string>
   </property>
-  <widget class="QLabel" name="label_titulo">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>10</y>
-     <width>271</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>20</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>ExtContact WhatsApp</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignmentFlag::AlignCenter</set>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_telefono">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>60</y>
+     <x>20</x>
+     <y>100</y>
      <width>131</width>
      <height>21</height>
     </rect>
@@ -83,8 +62,8 @@ QPushButton:pressed {
   <widget class="QLabel" name="label_caracteres">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>60</y>
+     <x>150</x>
+     <y>100</y>
      <width>91</width>
      <height>21</height>
     </rect>
@@ -104,8 +83,8 @@ QPushButton:pressed {
   <widget class="QTextEdit" name="textEdit">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>90</y>
+     <x>20</x>
+     <y>130</y>
      <width>401</width>
      <height>31</height>
     </rect>
@@ -114,8 +93,8 @@ QPushButton:pressed {
   <widget class="QTextEdit" name="textEdit_2">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>170</y>
+     <x>20</x>
+     <y>210</y>
      <width>401</width>
      <height>31</height>
     </rect>
@@ -124,8 +103,8 @@ QPushButton:pressed {
   <widget class="QLabel" name="label_grupo">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>140</y>
+     <x>20</x>
+     <y>180</y>
      <width>131</width>
      <height>21</height>
     </rect>
@@ -145,8 +124,8 @@ QPushButton:pressed {
   <widget class="QTextEdit" name="textEdit_3">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>250</y>
+     <x>20</x>
+     <y>290</y>
      <width>401</width>
      <height>31</height>
     </rect>
@@ -155,8 +134,8 @@ QPushButton:pressed {
   <widget class="QLabel" name="label_nomen">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>220</y>
+     <x>20</x>
+     <y>260</y>
      <width>101</width>
      <height>21</height>
     </rect>
@@ -176,8 +155,8 @@ QPushButton:pressed {
   <widget class="QLabel" name="label_registrar">
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>220</y>
+     <x>120</x>
+     <y>260</y>
      <width>91</width>
      <height>21</height>
     </rect>
@@ -197,8 +176,8 @@ QPushButton:pressed {
   <widget class="QLabel" name="label_telrec">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>300</y>
+     <x>20</x>
+     <y>340</y>
      <width>191</width>
      <height>21</height>
     </rect>
@@ -218,8 +197,8 @@ QPushButton:pressed {
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>339</y>
+     <x>30</x>
+     <y>379</y>
      <width>161</width>
      <height>21</height>
     </rect>
@@ -231,8 +210,8 @@ QPushButton:pressed {
   <widget class="QCheckBox" name="checkBox">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>320</y>
+     <x>250</x>
+     <y>360</y>
      <width>161</width>
      <height>71</height>
     </rect>
@@ -244,11 +223,17 @@ QPushButton:pressed {
   <widget class="QPushButton" name="btnextraer">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>400</y>
+     <x>30</x>
+     <y>440</y>
      <width>161</width>
      <height>61</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #24d467;
+}
+</string>
    </property>
    <property name="text">
     <string>Extraer</string>
@@ -258,7 +243,7 @@ QPushButton:pressed {
    <property name="geometry">
     <rect>
      <x>250</x>
-     <y>400</y>
+     <y>440</y>
      <width>171</width>
      <height>61</height>
     </rect>
@@ -270,8 +255,8 @@ QPushButton:pressed {
   <widget class="QPushButton" name="btnreiniciar">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>470</y>
+     <x>30</x>
+     <y>530</y>
      <width>161</width>
      <height>61</height>
     </rect>
@@ -284,14 +269,65 @@ QPushButton:pressed {
    <property name="geometry">
     <rect>
      <x>250</x>
-     <y>470</y>
+     <y>530</y>
      <width>171</width>
      <height>61</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #e3171a;
+}
+</string>
+   </property>
    <property name="text">
     <string>Salir</string>
    </property>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>30</y>
+     <width>267</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <widget class="QLabel" name="label_titulo">
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>ExtContact </string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_titulo_2">
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #24d467</string>
+      </property>
+      <property name="text">
+       <string>WhatsApp</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>
