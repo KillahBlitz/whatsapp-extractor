@@ -1,6 +1,6 @@
 from PySide6.QtWidgets import QApplication, QWidget, QPushButton
-from ui_ErrorScreen import Ui_Form
-from ui_form import Ui_Widget
+from UI.ui_ErrorScreen import Ui_Form
+from UI.ui_form import Ui_Widget
 import sys
 
 
@@ -21,12 +21,8 @@ class Widget(QWidget):
         self.ui.btnreiniciar.clicked.connect(self.show_error_screen)
         
     def show_error_screen(self):
-        """Método para mostrar la pantalla de error"""
         self.error_window = ErrorScreen()
         self.error_window.show()
-
-        
-
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
