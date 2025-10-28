@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'ErrorScreenSYSbYg.ui'
+## Form generated from reading UI file 'ProccesScreenkWiNGy.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.10.0
 ##
@@ -22,32 +22,30 @@ class Ui_Form(object):
     def setupUi(self, Form):
         if not Form.objectName():
             Form.setObjectName(u"Form")
-        Form.resize(379, 166)
-        Form.setMouseTracking(False)
-        Form.setTabletTracking(False)
-        self.label_title_error = QLabel(Form)
-        self.label_title_error.setObjectName(u"label_title_error")
-        self.label_title_error.setGeometry(QRect(140, 40, 91, 31))
+        Form.resize(380, 167)
+        self.label_warning = QLabel(Form)
+        self.label_warning.setObjectName(u"label_warning")
+        self.label_warning.setGeometry(QRect(30, 70, 321, 31))
         font = QFont()
         font.setFamilies([u"SansSerif"])
-        font.setPointSize(18)
-        font.setBold(True)
-        self.label_title_error.setFont(font)
-        self.label_title_error.setMouseTracking(False)
-        self.label_title_error.setTabletTracking(False)
-        self.label_title_error.setAcceptDrops(False)
-        self.label_title_error.setStyleSheet(u"QLabel{rgb(228, 23, 26)}")
-        self.label_title_error.setOpenExternalLinks(False)
-        self.label_error = QLabel(Form)
-        self.label_error.setObjectName(u"label_error")
-        self.label_error.setGeometry(QRect(30, 70, 321, 31))
-        font1 = QFont()
-        font1.setFamilies([u"SansSerif"])
-        self.label_error.setFont(font1)
+        self.label_warning.setFont(font)
         self.btn_aceptar = QPushButton(Form)
         self.btn_aceptar.setObjectName(u"btn_aceptar")
         self.btn_aceptar.setGeometry(QRect(140, 110, 91, 31))
-        self.btn_aceptar.setFont(font1)
+        self.btn_aceptar.setFont(font)
+        self.label_title_procces = QLabel(Form)
+        self.label_title_procces.setObjectName(u"label_title_procces")
+        self.label_title_procces.setGeometry(QRect(70, 40, 241, 31))
+        font1 = QFont()
+        font1.setFamilies([u"SansSerif"])
+        font1.setPointSize(18)
+        font1.setBold(True)
+        self.label_title_procces.setFont(font1)
+        self.label_title_procces.setMouseTracking(False)
+        self.label_title_procces.setTabletTracking(False)
+        self.label_title_procces.setAcceptDrops(False)
+        self.label_title_procces.setStyleSheet(u"QLabel{rgb(228, 23, 26)}")
+        self.label_title_procces.setOpenExternalLinks(False)
 
         self.retranslateUi(Form)
 
@@ -56,8 +54,8 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
-        self.label_title_error.setText(QCoreApplication.translate("Form", u"ERROR.", None))
-        self.label_error.setText(QCoreApplication.translate("Form", u"                                              -", None))
+        self.label_warning.setText(QCoreApplication.translate("Form", u"                                              -", None))
         self.btn_aceptar.setText(QCoreApplication.translate("Form", u"Aceptar", None))
+        self.label_title_procces.setText(QCoreApplication.translate("Form", u"PROCESO INICIADO.", None))
     # retranslateUi
 

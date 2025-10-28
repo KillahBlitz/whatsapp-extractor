@@ -6,24 +6,88 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>349</width>
-    <height>264</height>
+    <width>379</width>
+    <height>166</height>
    </rect>
+  </property>
+  <property name="mouseTracking">
+   <bool>false</bool>
+  </property>
+  <property name="tabletTracking">
+   <bool>false</bool>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="label_title_error">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>30</y>
-     <width>161</width>
-     <height>51</height>
+     <x>140</x>
+     <y>40</y>
+     <width>91</width>
+     <height>31</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>SansSerif</family>
+     <pointsize>18</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="mouseTracking">
+    <bool>false</bool>
+   </property>
+   <property name="tabletTracking">
+    <bool>false</bool>
+   </property>
+   <property name="acceptDrops">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{rgb(228, 23, 26)}</string>
+   </property>
    <property name="text">
-    <string>prueba</string>
+    <string>ERROR.</string>
+   </property>
+   <property name="openExternalLinks">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_error">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>70</y>
+     <width>321</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>SansSerif</family>
+    </font>
+   </property>
+   <property name="text">
+    <string>                                              -</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_aceptar">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>110</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>SansSerif</family>
+    </font>
+   </property>
+   <property name="text">
+    <string>Aceptar</string>
    </property>
   </widget>
  </widget>
