@@ -84,6 +84,67 @@ Para ejecutar la aplicación principal:
 python widget.py
 ```
 
+### Configuración del Perfil de Chrome (`CHROME_USER_DATA_DIR`)
+
+La aplicación reutiliza tu sesión de WhatsApp Web abriendo Chrome con el perfil indicado en la constante `CHROME_USER_DATA_DIR` definida en `widget.py`.
+
+Ruta actual por defecto:
+```python
+CHROME_USER_DATA_DIR = r'C:\Users\emanu\AppData\Local\Google\Chrome\User Data\Profile 1'
+```
+
+Si tu sesión activa está en otro perfil (por ejemplo `Profile 3` o un perfil personalizado), cambia la constante. Para saber tu ruta exacta:
+1. Abre Chrome.
+2. Escribe `chrome://version` en la barra de direcciones y pulsa Enter.
+3. Busca el campo "Profile Path" (Ruta de perfil).
+4. Copia esa ruta y reemplázala en `widget.py` respetando el formato raw string `r''`.
+
+Ejemplo de modificación:
+```python
+CHROME_USER_DATA_DIR = r'C:\Users\tu_usuario\AppData\Local\Google\Chrome\User Data\Profile 3'
+```
+
+Si usas un perfil creado manualmente dentro de `User Data`, apúntalo igual (p.ej. `Profile 5`, `Default`, etc.). Asegúrate de tener la sesión ya iniciada en WhatsApp Web en ese perfil antes de presionar "Aceptar" en la ventana de proceso.
+
+### Flujo Completo de Extracción
+
+1. Ejecuta la aplicación: `python widget.py` (con el entorno virtual activado).
+2. Ingresa el nombre EXACTO del grupo en el campo correspondiente.
+3. Presiona el botón "Extraer".
+4. Se abrirá la ventana de proceso mostrando el nombre del grupo y el mensaje para iniciar.
+5. El scraping NO comienza todavía: debes presionar el botón "Aceptar" en esa ventana para iniciar. Hasta que no hagas clic ahí, no se abre el navegador.
+6. Tras presionar "Aceptar" se abrirá Chrome con tu perfil y comenzará la extracción.
+7. Espera a que el mensaje indique "completado" junto con el número de participantes extraídos.
+8. El contador en la ventana principal (label de números recuperados) se actualiza automáticamente.
+9. Ingresa tu "Número de teléfono" y la "Nomenclatura" (etiqueta) que quieras para el archivo.
+10. Presiona "Descargar" para guardar el CSV.
+
+### Formato y Nombre del Archivo CSV
+
+El nombre del archivo se construye según los datos ingresados:
+- Si ingresas teléfono y nomenclatura: `telefono nomenclatura.csv` (ej: `5512345678 CDMX.csv`)
+- Si solo hay nomenclatura: `nomenclatura.csv`
+- Si no hay ninguno de los dos: se usa el nombre del grupo: `nombre_del_grupo.csv`
+
+El contenido del CSV incluye las columnas según los datos capturados por el scraper (nombre y teléfono). El archivo se guarda en el directorio `output/` del proyecto.
+
+### Logs y Manejo de Errores
+
+La aplicación sólo crea la carpeta `logs/` y archivos de log si ocurre un error durante la extracción. En ejecuciones normales sin errores no se generarán archivos de log.
+
+Si ocurre un error:
+- Se mostrará un mensaje de error.
+- Se generará una entrada en `logs/` con el detalle técnico.
+
+### Recomendaciones
+
+- Asegúrate de tener tu sesión de WhatsApp Web previamente iniciada en el perfil de Chrome que configuraste.
+- No interactúes con la ventana de Chrome mientras se realiza el scroll de extracción para evitar perder el foco.
+- Si el grupo es muy grande (cientos de participantes), el tiempo de extracción puede aumentar.
+- Si deseas cambiar el perfil frecuentemente, considera externalizar la ruta a una variable de entorno y leerla en `widget.py` (mejora opcional futura).
+
+### Regenerar Interfaz desde Qt Designer
+
 ### Generar Interfaz desde Qt Designer
 
 Si realizas cambios en el archivo `form.ui` usando Qt Designer, necesitas regenerar el archivo `ui_form.py`:
