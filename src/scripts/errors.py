@@ -11,7 +11,6 @@ _LOG_DIR = 'logs'
 _LOG_FILE = None
 _FILE_HANDLER_ATTACHED = False
 
-# configurar handler de consola inmediatamente sin tocar sistema de archivos
 _console_handler = logging.StreamHandler()
 _console_handler.setLevel(logging.INFO)
 _console_handler.setFormatter(logging.Formatter('%(asctime)s [%(levelname)s] %(message)s'))
@@ -31,7 +30,7 @@ def _ensure_file_handler():
         logging.getLogger().addHandler(fh)
         _FILE_HANDLER_ATTACHED = True
     except Exception:
-        # si no se puede crear el archivo, continuar solo con consola
+        # si no se puede crear el archivo, continua solo con consola
         pass
 
 def log_info(message: str) -> None:

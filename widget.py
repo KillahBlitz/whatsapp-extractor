@@ -37,7 +37,7 @@ class ProccesScreen(QWidget):
         self.scraping_started = False
 
     def prepare_scrape(self, profile_path: str, group_name: str):
-        # guardar parametros para iniciar cuando se presione aceptar
+        # guarda parametros para iniciar cuando se presione aceptar
         self.profile_path = profile_path
         self.group_name = group_name
         self.set_status(f"grupo: {group_name}\npresiona aceptar para iniciar extraccion")
@@ -134,7 +134,7 @@ class Widget(QWidget, Ui_Widget):
         self.process_window.show()
 
     def on_extraction_completed(self, rows):
-        # guarda en memoria y actualizar contador en ui
+        # guarda en memoria y actualiza contador en ui
         self._last_rows = rows or []
         try:
             self.ui.label_5.setText(str(len(self._last_rows)))

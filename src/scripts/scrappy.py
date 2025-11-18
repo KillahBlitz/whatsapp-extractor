@@ -23,12 +23,12 @@ def extract_from_card(card: WebElement) -> Tuple[str, str]:
     name = ""
     number = ""
     try:
-        # extraer nombre visible
+        # extrae nombre visible
         try:
             name = card.find_element(By.XPATH, './/span[@dir="auto"]').text.strip()
         except:
             name = ""
-        # intentar obtener numero por xpath conocido
+        # intenta obtener numero por xpath conocido
         try:
             number = card.find_element(By.XPATH, './/div/div/div[2]/div[2]/div[2]/span[1]/span').text.strip()
         except:
@@ -98,10 +98,10 @@ def get_group_info(driver, is_cancelled: Optional[Callable[[], bool]] = None) ->
         actions.key_down(Keys.ALT).send_keys('i').key_up(Keys.ALT).perform()
         time.sleep(1.0)
 
-        # buscar y abrir modal 
+        # busca y abre modal 
         modal_button = None
 
-        #  buscar botones con aria-label que contengan miembro
+        #  busca botones con aria-label que contengan miembro
         try:
             btns = driver.find_elements(By.XPATH,
                 '//div[@role="button" and contains(translate(@aria-label,"ABCDEFGHIJKLMNOPQRSTUVWXYZ","abcdefghijklmnopqrstuvwxyz"), "miembro")]')
@@ -156,7 +156,7 @@ def get_group_info(driver, is_cancelled: Optional[Callable[[], bool]] = None) ->
                     pass
             time.sleep(0.9)
         else:
-            # no se encontro boton: fallback a extraccion desde barra lateral para grupos pequenos
+            # no se encontro boton fallback a extraccion desde barra lateral para grupos pequenos
             log_info("boton modal no encontrado usando fallback de barra lateral para grupos menores a 10 miembros")
             try:
                 container = WebDriverWait(driver, 6).until(
@@ -199,12 +199,12 @@ def get_group_info(driver, is_cancelled: Optional[Callable[[], bool]] = None) ->
                         continue
                 return participants_raw
 
-        #  aqui el modal fue abierto continuar con extraccion del modal
+        #  aqui el modal fue abierto continua con extraccion del modal
         modal = WebDriverWait(driver, 12).until(
             EC.presence_of_element_located((By.XPATH, '//div[@role="dialog" or @role="presentation"]'))
         )
 
-        # localizar contenedor de scroll con fallbacks
+        # localiza contenedor de scroll con fallbacks
         scroll_container = None
         try:
             scroll_container = WebDriverWait(modal, 8).until(
@@ -251,13 +251,13 @@ def get_group_info(driver, is_cancelled: Optional[Callable[[], bool]] = None) ->
                     pass
             time.sleep(0.08)
 
-            # intentar obtener tarjetas renderizadas con multiples selectores
+            # intenta obtener tarjetas renderizadas con multiples selectores
             cards = modal.find_elements(By.XPATH,
                 './/div[contains(@class,"x10l6tqk") and @role="listitem"] | .//div[@data-testid="cell-frame-container"] | .//div/div/div/div[2]/div/div/div/div')
             if not cards:
                 cards = modal.find_elements(By.XPATH, './/div/div/div/div[2]/div/div/div/div')
 
-            # extraer de tarjetas encontradas
+            # extrae de tarjetas encontradas
             for c in cards:
                 nm, ph = extract_from_card(c)
                 if not nm and ph:
@@ -391,7 +391,7 @@ def get_group_info(driver, is_cancelled: Optional[Callable[[], bool]] = None) ->
 # punto de entrada principal
 def scrape_group(profile_path: str, group_name: str, is_cancelled: Optional[Callable[[], bool]] = None) -> List[Tuple[str, str]]:
     # punto de entrada para la app retorna lista de tuplas (nombre, telefono)
-    # is_cancelled: funcion opcional que retorna verdadero si la operacion debe abortarse
+    # is_cancelled funcion opcional que retorna verdadero si la operacion debe abortarse
     driver = None
     try:
         driver = setup_driver(profile_path)

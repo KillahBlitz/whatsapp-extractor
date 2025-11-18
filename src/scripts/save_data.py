@@ -42,8 +42,7 @@ def _sanitize_filename(name: str) -> str:
 
 def save_to_csv(data: List[Tuple[str, str]], group_name: str) -> str:
     # guarda lista de participantes en archivo csv en carpeta output
-    # args: data como lista de tuplas (nombre, numero), group_name para nombre de archivo
-    # retorna: ruta del archivo o cadena vacia si falla
+    # retorna ruta del archivo o cadena vacia si falla
     try:
         os.makedirs('output', exist_ok=True)
         safe_group = _sanitize_filename(group_name) if group_name else 'sin_nombre'
